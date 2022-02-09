@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.senter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    padding-top: 2em;
+}
+.editForm{
+    width: 400px;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 8px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    align-items: row;
+    justify-content: row;
+}
+h1{
+    margin: 1em;
+}
+h2{
+    font-size: 18px;
+    color: blue;
+}
+.row1{
+    display: inline-flex;
+    width: 100%;
+}
