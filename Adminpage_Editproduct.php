@@ -15,7 +15,7 @@
                 <h1>AdminPage/EditProduct</h1>
             </div>
             <div class="editForm">
-                <form method="POST">
+                <form method="POST" class="coverForm">
                     <div class="row1">
                         <h2>Title:</h2>
                         <input type="text">
@@ -28,17 +28,24 @@
                         <h2>Category:</h2>
                         <input type="text">
                     </div>
-                    <div>
+                    <div class="row4">
                         <h2>Price:</h2>
                         <input type="text">
-                    </div class="row4">
-                    <div>
-                        <h2>DiscountStartDate:</h2>
+                    </div>
+                    <div class="row5">
+                        <h2>DiscountStartDate</h2>
                         <input type="text">
                     </div>                    
-                    <div class="row5">
-                        <h2>DiscountEndDate:</h2>
+                    <div class="row6">
+                        <h2>DiscountEndDate</h2>
                         <input type="text">
+                    </div>
+                    <div class="row7">
+                        <h2>Images</h2>
+                        <input type="submit" value="Upload" class="uploadbutton">
+                        <div class="save">
+                            <input type="submit" value="Save" class="savebutton">
+                        </div>
                     </div>
                 </form>
             </div>

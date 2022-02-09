@@ -12,7 +12,7 @@
 }
 .editForm{
     width: 400px;
-    height: 300px;
+    height: 280px;
     background-color: lightgray;
     border-radius: 8px;
     border: 1px solid gray;
@@ -30,5 +30,62 @@ h2{
 }
 .row1{
     display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+    
+}
+.coverForm{
     width: 100%;
+}
+.row2{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.row3{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.row4{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.row5{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.row6{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.row7{
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+input{
+    margin-left: 5px;
+}
+.save{
+    display: flex;
+    justify-content: row;
+    margin-left: 170px;
+}
+.uploadbutton{
+    background-color: darkgray;
+    color: black;
+    border: none;
+    width: 60px;
+}
+.savebutton{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    width: 70px;
+    height: 25px;
 }
