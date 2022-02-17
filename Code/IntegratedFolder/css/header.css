@@ -4,9 +4,7 @@
 {
   padding:0;
   margin: auto 0;
-}
-::after,
-::before {
+  font-family: Poppins, sans-serif;
   box-sizing: border-box;
 }
 body,
@@ -29,7 +27,7 @@ html {
     max-width: 1200px;
   }
 }
-body {
+.headerBody{
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -40,35 +38,24 @@ body {
   scroll-behavior: smooth;
   color: #3a3a3a;
 }
-body[dir="rtl"] {
-  text-align: right;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Poppins, sans-serif;
-  color: #000;
-}
+
 a,
-button {
+.search-element button {
   text-decoration: none;
   background-color: transparent;
   border: 0;
 }
-ul {
+.main-menu ul {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
   margin: 0;
   list-style: none;
 }
-li {
+.main-menu li {
   list-style: none;
 }
-input {
+.headerInput {
   display: inline-block;
   line-height: 50px;
   height: 50px;
@@ -254,7 +241,7 @@ header .main-menu ul li .mega-menu li ul li a {
 .search-element form {
   position: relative;
 }
-.search-element form input {
+.search-element form input{
   height: 44px;
   width: 100%;
   background-color: #fff;
@@ -265,7 +252,7 @@ header .main-menu ul li .mega-menu li ul li a {
 .search-element form button {
   position: absolute;
   top: 0;
-  left: 530px;
+  left: 410px;
   width: 65px;
   height: 44px;
   display: flex;
@@ -314,7 +301,7 @@ header .main-menu ul li .mega-menu li ul li a {
 }
 .columnLgThree{
   flex: 0 0 auto;
-  width: 25%;
+  width: 30%;
 }
 .columnLgSix{
   flex: 0 0 auto;

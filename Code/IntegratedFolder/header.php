@@ -9,7 +9,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/header.css">
 </head>
-<body>
+<body class="headerBody">
     <div class="main-wrapper">
         <header>
             <!-- Header top area start -->
@@ -76,7 +76,7 @@
                                     <ul class="mega-menu displayBlock">
                                         <li class="displayFlex">
                                             <ul class="displayBlock">
-                                                <li class="title"><a href="products.php">All Products</a></li>
+                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=computer&submit=submit">All Products</a></li>
                                                 <li><a href="#">Smart Watches</a></li>
                                                 <li><a href="#">Components</a></li>                                     
                                             </ul>
@@ -88,7 +88,7 @@
                                             <ul class="displayBlock">
                                                 <li class="title"><a href="#">My Account</a></li>
                                                 <li><a href="#">Shooping Cart</a></li>
-                                                <li><a href="#">Login</a></li>
+                                                <li><a href="LoginPage.php">Login</a></li>
                                             </ul>
                                             <ul class="displayFlex align-items-center flex-column justify-content-center">
                                                 <li>
