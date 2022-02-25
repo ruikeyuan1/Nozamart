@@ -18,7 +18,7 @@
         <div class="upperDisplayItemDis">
              <b>Welcome to Nozamart</b>
             <p>Your Home Smart Device & Best Solution</p> 
-            <a href="products.php?productsSort=NameAsc&type=computer&submit=submit" class="btnStyle">Shop All Devices</a>          
+            <a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit" class="btnStyle">Shop All Devices</a>          
         </div>
         <div class="upperDisplayItemImg">
             <img src="img/homepage/inner-img/homeUpperDisplayProductOne.png">
@@ -53,7 +53,7 @@
     <banner>
         <div class="mainBanner">
             <h2 class="bannerTitle"> <span>Smart Fashion</span><br> With Smart Devices </h2>
-            <a href="products.php?productsSort=NameAsc&type=computer&submit=submit" class="btnStyle">Shop All Devices</a>
+            <a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit" class="btnStyle">Shop All Devices</a>
         </div>
     </banner>
 </main>

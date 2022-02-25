@@ -30,17 +30,17 @@
     <div class="productsMenu">
         <ul>
             <li><a href="#"><span>Products</span></a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=computer&submit=submit">Computers</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=phone&submit=submit">Phones</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=watch&submit=submit">Watches</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=component&submit=submit">Components</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=all&submit=submit">All Apparatus</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=computer&text=()&submit=submit">Computers</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=phone&text=()&submit=submit">Phones</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=watch&text=()&submit=submit">Watches</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=component&text=()&submit=submit">Components</a></li>
+            <li><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Apparatus</a></li>
         </ul>
     </div>
     <main class="productsMain">
         <div class="upperSorting">
             <div class="upperSortingFirstItem">
-                <p><span><?php echo $_SESSION['numRows'];?></span> Products Found out of <span>30</span></p>
+                <p><span>20</span> Products Found out of <span>30</span></p>
             </div>
             <div class="upperSortingSecondItem">
                 <label for="Sort-select">Sort by</label>
@@ -51,6 +51,7 @@
                         <option  value="PriceAsc">Price ascending</option>
                         <option  value="PriceDesc">Price descending</option>
                     </select>
+                    <input type="hidden" name="text" value="<?php echo $_GET['text'];?>">
                     <input type="hidden" name="type" value="<?php echo $_GET['type'];?>">
                     <input type="submit" name="submit" value="submit">
                 </form>

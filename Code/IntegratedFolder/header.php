@@ -25,7 +25,7 @@
                             <div class="top-nav">
                                 <ul>
                                     <li><a href="tel:0123456789"><img src="img/icons/contact-2.png"></img> +012 3456 789</a></li>
-                                    <li><a href="ruike.yuan@student.nhlstenden.com"><img src="img/icons/contact-3.png"></i> ruike.yuan@student.nhlstenden.com</a></li>
+                                    <li><a href="ruike.yuan@student.nhlstenden.com"><img src="img/icons/contact-3.png"></i> nozamart@nhlstenden.com</a></li>
                                     <li><a href="#"><img src="img/icons/contact-1.png"></i>Account</a></li>
                                 </ul>
                             </div>
@@ -45,9 +45,14 @@
                         </div>
                         <div class="columnLgSix">
                             <div class="search-element">
-                                <form action="#">
-                                    <input type="text" placeholder="Search" />
-                                    <button><img src="img/icons/search.png" alt="search"></button>
+                                <form action="products.php" >
+                                    <input type="hidden" name="productsSort" value="NameAsc">
+                                    <input type="hidden" name="type" value="0">
+                                    <input type="hidden" name="submit" value="submit">
+                                    <input type="text" name="text" placeholder="Search for products" />
+                                    <!--<button><img src="img/icons/search.png" alt="search"></button>-->
+                                    <input class="searchImg" type="image" src="img/icons/search.png" name="imgsub" alt="icon" >
+                                   <!--SELECT * FROM product WHERE `productName` LIKE '%Phone%' OR `description` LIKE '%Phone%'-->
                                 </form>
                             </div>
                         </div>
@@ -76,7 +81,7 @@
                                     <ul class="mega-menu displayBlock">
                                         <li class="displayFlex">
                                             <ul class="displayBlock">
-                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=computer&submit=submit">All Products</a></li>
+                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Products</a></li>
                                                 <li><a href="#">Smart Watches</a></li>
                                                 <li><a href="#">Components</a></li>                                     
                                             </ul>

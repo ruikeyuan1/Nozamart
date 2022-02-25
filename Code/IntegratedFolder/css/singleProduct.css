@@ -96,28 +96,31 @@ h1{
     flex-direction: row;
     height: 100px;
 }
-.plusButton span{
+.plusButton input[type="submit"]{
     font-size: 20px;
     font-weight: 60px;
     padding:9px;
     border-width: 2px;
     border-top: 2px solid #707070;
+    border-right: 2px solid #020202;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
     background-color: #707070;
     color: white;
-}.minusButton span{
+}
+.minusButton input[type="submit"]{
     font-size: 20px;
     font-weight: 60px;
     padding:9px;
     border-width: 2px;
     border-top: 2px solid #707070;
+    border-left: 2px solid #020202;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     background-color: #707070;
     color: white;
 }
-.countArea span{
+.countArea{
     font-size: 20px;
     font-weight: 60px;
     padding:9px;
@@ -131,12 +134,4 @@ input[type="submit"]{
     padding:0;
     background-color: black;
     color: white;
-    width:15%;
-}
-input[type="submit"]{
-    padding:0px 0px 1px 10px;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    width:15%;
 }

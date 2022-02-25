@@ -1,3 +1,7 @@
+<?php
+   session_start();
+  
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -12,6 +16,7 @@
 <body>
 <?php
     include("header.php");
+    //include("singleProduct/first.php");
 ?>
 <div class="singleProductPageBanner">
     <p>Single Product</p>
@@ -19,39 +24,47 @@
 </div>
 
 <main class="productArea">
-    <div class="productPicture">
-        <img src="img/product-image/1.png" alt="">
-    </div>
-    <div class="ProductDis">
-        <h1>ProductTitle</h1>
-        <b>$200.00</b>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consecte adipisicing
-        elit, sed do eiusmll tempor incididunt ut labore 
-        et dolore magna aliqua. Ut enim ad mill veniam, 
-        quis nostrud exercitation ullamco laboris nisi ut
-        aliquip exet commodo consequat. Duis aute 
-        irure dolor.
-        </p>
-        <p><span class="productCategoryTitle">Category:</span><span class="productCategoryContent">Phone</span></p>
-        <p><span class="productDiscountPeriodTitle">Discount Period:</span><span class="productDiscountPeriodContent">20220204 - 20220306</span></p>
-        <p><span class="warning">Only available for customers above 18</span></p>
-        <div class="plusMinus">
-            <div class="plusButton">
-                <span>+</span>
+    <?php
+        $_SESSION['COUNTPLUS']=$_GET['Cs'];
+        include("singleProduct/first.php");
+        if($_SESSION['COUNTPLUS']<1) {
+            $_SESSION['COUNTPLUS']=1;
+           // echo  $_SESSION['COUNTPLUS'];
+        }
+      
+        if(isset($_POST["increment"])) {
+            $_SESSION['COUNTPLUS']++ ;
+            //echo  $_SESSION['COUNTPLUS'];
+        }
+        if(isset($_POST["decrement"])) {
+            $_SESSION['COUNTPLUS']-- ;
+            //echo  $_SESSION['COUNTPLUS'];
+        }
+       
+       
+    ?>
+       <form action="singleProduct.php?Id=<?php echo$_GET['Id'];?>&Cs=<?php echo $_SESSION['COUNTPLUS'];?>" method="post">
+            <div class="plusMinus">
+                <div class="plusButton">
+                    <input type="submit" name="increment" value="+">
+                </div>
+                <div class="countArea">
+                    <span><?php echo $_SESSION['COUNTPLUS'];?></span>
+                </div>
+                <div class="minusButton">
+                    <input type="submit" name="decrement" value="-">
+                </div>
             </div>
-            <div class="countArea">
-                <span>1</span>
-            </div>
-            <div class="minusButton">
-                <span>-</span>
-            </div>
-        </div>
-        <form>
-            <input type="submit" class="submitButton" name="submit" value="Add to cart">
+        </form>
+        <form action="cart.php" method="post">
+            <input type="hidden" name="submitone" value="<?php echo $Id;?>">
+            <input type="hidden" name="submitage" value="<?php echo $Age;?>">
+            <input type="hidden" name="submittwo" value="<?php echo $_SESSION['COUNTPLUS'];?>">
+            <input type="hidden" name="submitprice" value="<?php echo $unitPrice;?>">
+            <input type="submit" class="submitButton" name="send" value="send">
+           
         </form>
     </div>
-   
 </main>
 <?php
     include("footer.php");

@@ -241,34 +241,28 @@ header .main-menu ul li .mega-menu li ul li a {
 .search-element form {
   position: relative;
 }
-.search-element form input{
+.search-element form input[type=text]{
   height: 44px;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   border: 0;
   border-radius: 5px;
   padding-right: 80px;
 }
-.search-element form button {
+.search-element form input[type=image] {
+  width: 10%;
   position: absolute;
   top: 0;
   left: 410px;
-  width: 65px;
   height: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-radius: 0 5px 5px 0;
   background-color: #266bf9;
 }
-.search-element form button img{
+.search-element form .searchImg{
   position: absolute;
-  width: 50px;
-  height: 45px;
 }
-.search-element form button:hover {
-  background-color: #266bf9;
+.search-element form input[type=image]:hover {
+  background-color: #26f985;
 }
 .search-element.max-width-100 {
   max-width: 100%;
@@ -276,23 +270,7 @@ header .main-menu ul li .mega-menu li ul li a {
 .action-form {
   position: relative;
 }
-.submit {
-  position: absolute;
-  top: 0;
-  left: auto;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 100%;
-  background: #266bf9;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 0 5px 5px 0;
-  box-shadow: none;
-  outline: 0;
-}
+
 .displayBlock{
   display: block !important;
 }
