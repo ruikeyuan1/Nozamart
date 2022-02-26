@@ -1,3 +1,4 @@
+<!--Ruike Yuan Feb 2022-->
 <?php
    session_start();
   
@@ -20,7 +21,7 @@
 ?>
 <div class="singleProductPageBanner">
     <p>Single Product</p>
-    <p><span class="fontBlack">home/<span class="fontBlue">Product</span></p>
+    <p><span class="fontBlack">Home/<span class="fontBlue">Product</span></p>
 </div>
 
 <main class="productArea">
@@ -56,12 +57,12 @@
                 </div>
             </div>
         </form>
-        <form action="cart.php" method="post">
+        <form class="singleProductSb" action="cart.php" method="post">
             <input type="hidden" name="submitone" value="<?php echo $Id;?>">
             <input type="hidden" name="submitage" value="<?php echo $Age;?>">
             <input type="hidden" name="submittwo" value="<?php echo $_SESSION['COUNTPLUS'];?>">
             <input type="hidden" name="submitprice" value="<?php echo $unitPrice;?>">
-            <input type="submit" class="submitButton" name="send" value="send">
+            <input type="submit" class="submitButton" name="send" value="Add to Cart">
            
         </form>
     </div>
@@ -69,5 +70,6 @@
 <?php
     include("footer.php");
 ?>
+
 </body>
 </html>

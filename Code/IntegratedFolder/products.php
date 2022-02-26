@@ -1,3 +1,4 @@
+<!--Ruike Yuan Feb 2022-->
 <?php
  //include("otherFiles/redirect.php"); 
  //locationReturn($_SERVER['PHP_SELF']);
@@ -25,7 +26,7 @@
     ?>
     <div class="productsPageBanner">
         <p>Product Page</p>
-        <p><span class="fontBlack">home/<span class="fontBlue">Shop</span></p>
+        <p><span class="fontBlack">Home/<span class="fontBlue">Shop</span></p>
     </div>
     <div class="productsMenu">
         <ul>
@@ -40,7 +41,7 @@
     <main class="productsMain">
         <div class="upperSorting">
             <div class="upperSortingFirstItem">
-                <p><span>20</span> Products Found out of <span>30</span></p>
+                    <p><span>Available</span> Products</p>
             </div>
             <div class="upperSortingSecondItem">
                 <label for="Sort-select">Sort by</label>
@@ -58,12 +59,12 @@
             </div>
         </div>
         <div class="ProductsPagedownDisplay">
-            <?php
-                  
-                   include("products/productsRfile.php");
-                   
+            <?php                 
+                   include("products/productsRfile.php");                 
             ?>      
         </div>
+        
+       
         <!--
         <div class="switchPage">
             <div class="leftButton">

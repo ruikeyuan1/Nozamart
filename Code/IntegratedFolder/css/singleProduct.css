@@ -1,3 +1,4 @@
+/*Ruike Yuan Feb 2022*/
 *
 {
     padding:0px;
@@ -107,6 +108,7 @@ h1{
     border-bottom-left-radius: 2px;
     background-color: #707070;
     color: white;
+    cursor: pointer;
 }
 .minusButton input[type="submit"]{
     font-size: 20px;
@@ -119,6 +121,7 @@ h1{
     border-bottom-right-radius: 2px;
     background-color: #707070;
     color: white;
+    cursor: pointer;
 }
 .countArea{
     font-size: 20px;
@@ -130,8 +133,11 @@ h1{
     background-color: #707070;
     color: white;
 }
-input[type="submit"]{
-    padding:0;
-    background-color: black;
+.singleProductSb input[type="submit"]{
+    background-color: #316EF2;
+    font-size: 15px;
+    padding:10px;
+    border-radius: 5px;
     color: white;
+    cursor: pointer;
 }

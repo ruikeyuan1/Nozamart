@@ -1,3 +1,4 @@
+<!--Ruike Yuan Feb 2022-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -24,7 +25,7 @@
                         <div class="flex displayBlock">
                             <div class="top-nav">
                                 <ul>
-                                    <li><a href="tel:0123456789"><img src="img/icons/contact-2.png"></img> +012 3456 789</a></li>
+                                    <li><a href="tel:0123456789"><img src="img/icons/contact-2.png"></img> +012 345 6789</a></li>
                                     <li><a href="ruike.yuan@student.nhlstenden.com"><img src="img/icons/contact-3.png"></i> nozamart@nhlstenden.com</a></li>
                                     <li><a href="#"><img src="img/icons/contact-1.png"></i>Account</a></li>
                                 </ul>
@@ -49,7 +50,7 @@
                                     <input type="hidden" name="productsSort" value="NameAsc">
                                     <input type="hidden" name="type" value="0">
                                     <input type="hidden" name="submit" value="submit">
-                                    <input type="text" name="text" placeholder="Search for products" />
+                                    <input type="text" name="text" placeholder=" Search for products" />
                                     <!--<button><img src="img/icons/search.png" alt="search"></button>-->
                                     <input class="searchImg" type="image" src="img/icons/search.png" name="imgsub" alt="icon" >
                                    <!--SELECT * FROM product WHERE `productName` LIKE '%Phone%' OR `description` LIKE '%Phone%'-->
@@ -58,7 +59,7 @@
                         </div>
                         <div class="columnLgThree">
                             <div class="header-actions">
-                                <a href="#" class="header-action-btn">
+                                <a href="cart.php" class="header-action-btn">
                                    <!-- cart img  --> 
                                    <img src="img/icons/whiteCart.png" alt="shoppingCart">
                                    <!-- cart img end -->
@@ -82,18 +83,20 @@
                                         <li class="displayFlex">
                                             <ul class="displayBlock">
                                                 <li class="title"><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Products</a></li>
-                                                <li><a href="#">Smart Watches</a></li>
-                                                <li><a href="#">Components</a></li>                                     
+                                                <li><a href="products.php?productsSort=NameAsc&type=watch&text=()&submit=submit">Smart Watches</a></li>
+                                                <li><a href="products.php?productsSort=NameAsc&type=component&text=()&submit=submit">Components</a></li>                                     
                                             </ul>
                                             <ul class="displayBlock">
-                                                <li class="title"><a href="#">Computers</a></li>
-                                                <li><a href="#">Phones</a></li>
+                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=computer&text=()&submit=submit">Computers</a></li>
+                                                <li><a href="products.php?productsSort=NameAsc&type=phone&text=()&submit=submit">Phones</a></li>
                                                 <li><a href="#">Intelligent Apparatus</a></li>
                                             </ul>
                                             <ul class="displayBlock">
                                                 <li class="title"><a href="#">My Account</a></li>
-                                                <li><a href="#">Shooping Cart</a></li>
+                                                <li><a href="cart.php">Shooping Cart</a></li>
                                                 <li><a href="LoginPage.php">Login</a></li>
+                                                <li><a href="orderchecklogin.php"></i>PickerLogin</a></li>
+                                                <li><a href="#"></i>AdminLogin</a></li>
                                             </ul>
                                             <ul class="displayFlex align-items-center flex-column justify-content-center">
                                                 <li>

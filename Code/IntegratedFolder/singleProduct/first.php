@@ -1,4 +1,4 @@
-
+<!--Ruike Yuan Feb 2022-->
 <?php
     include("dataConnect.php");
 	$con = mysqli_connect($host, $user, $pass, $database);
@@ -26,7 +26,7 @@
 								<p>{$rowOne['description']}
 								</p>
 								<p><span class="productCategoryTitle">Category:</span><span class="productCategoryContent">{$rowOne['category']}</span></p>
-								<p><span class="productDiscountPeriodTitle">Discount Period:</span><span class="productDiscountPeriodContent">{$rowOne['disone']}--{$rowOne['distwo']}</span></p>
+								<p><span class="productDiscountPeriodTitle">Discount Period:</span><span class="productDiscountPeriodContent">{$rowOne['disone']}/{$rowOne['distwo']}</span></p>
 								
 		DELIMETER;
 		$age= <<<DELIMETER
@@ -45,7 +45,5 @@
 	}
 	//print_r($result);
 	mysqli_free_result($result);
-	mysqli_close($con);	
-
-		
+	mysqli_close($con);			
 ?>

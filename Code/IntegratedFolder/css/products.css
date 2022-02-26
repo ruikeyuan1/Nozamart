@@ -1,3 +1,4 @@
+/*Ruike Yuan Feb 2022*/
 *
 {
     padding:0px;
@@ -75,9 +76,19 @@ main
      color: #3A6AF0;
 }
 .upperSortingSecondItem{
+    display: flex;
+    width: 300px;
+    height: 50px;
     padding: 7px;
     border-radius: 5px;
     border: 2px solid #8f8d8d;
+}
+.upperSortingSecondItem form input[type=submit],select{
+    margin-left: 4px;
+   background-color: white;
+   border: 2px solid grey;
+   color:#3A6AF0;
+   cursor: pointer;
 }
 #Sort-select{
     color: #3A6AF0;

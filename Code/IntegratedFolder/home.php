@@ -1,3 +1,4 @@
+<!--Ruike Yuan Feb 2022-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -29,25 +30,25 @@
             <img class="ProductImg" src="img/homepage/homepageOtherImg/hero-1-1.png" alt="">
             <b class="ProductTitle">ProductTitle</b>
             <p class="ProductPrice">From$64</p>
-            <img class="ArrowImg" href="#" src="img/homepage/homepageOtherImg/EllipseArrow.png"></img>         
+            <a class="ArrowImg" href="singleProduct.php?Id=1&Cs=0"><img  src="img/homepage/homepageOtherImg/EllipseArrow.png"></a>         
         </div>
         <div class="downDisplayItem">
             <img class="ProductImg" src="img/homepage/homepageOtherImg/hero-1-2.png" alt="">
             <b class="ProductTitle">ProductTitle</b>
             <p class="ProductPrice">From$64</p>
-            <img class="ArrowImg" href="#" src="img/homepage/homepageOtherImg/EllipseArrow.png"></img>             
+            <a class="ArrowImg" href="singleProduct.php?Id=2&Cs=0"><img  src="img/homepage/homepageOtherImg/EllipseArrow.png"></a>         
         </div>
         <div class="downDisplayItem">
             <img class="ProductImg" src="img/homepage/homepageOtherImg/downDisplay1.png" alt="">
             <b class="ProductTitle">ProductTitle</b>
             <p class="ProductPrice">From$64</p> 
-            <img class="ArrowImg" href="#" src="img/homepage/homepageOtherImg/EllipseArrow.png"></img>           
+            <a class="ArrowImg" href="singleProduct.php?Id=3&Cs=0"><img  src="img/homepage/homepageOtherImg/EllipseArrow.png"></a>          
         </div>
         <div class="downDisplayItem">
             <img class="ProductImg" src="img/homepage/homepageOtherImg/downDisplay1.png" alt="">
             <b class="ProductTitle">ProductTitle</b>
             <p class="ProductPrice">From$64</p> 
-            <img class="ArrowImg" href="#" src="img/homepage/homepageOtherImg/EllipseArrow.png"></img>          
+            <a class="ArrowImg" href="singleProduct.php?Id=4&Cs=0"><img  src="img/homepage/homepageOtherImg/EllipseArrow.png"></a>          
         </div>
     </div>
     <banner>
