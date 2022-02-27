@@ -80,7 +80,7 @@ color: white;
 }
 .downDisplay
 {
-    background-color:bisque;
+    background-color:white;
     background-position: center;
     background-size:100% 630px;
     display: grid;
@@ -92,8 +92,8 @@ color: white;
     width: 100%;
 }
 .downDisplayItem{
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    border-top: 2px solid blue;
+    border-left: 2px solid blue;
     display: grid;
     grid-template-columns: 45% 55%;
     grid-template-rows: 34.5px 34.5px 34.5px 34px 34px 34.5px 34.5px 34.5px 34px 34px ;

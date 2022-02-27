@@ -20,15 +20,11 @@ $trace=0;
 if(isset($_POST["grandTotal"])) {
     $tp=$_POST["grandTotal"];
 }
-if(isset($_POST["cuId"])) {
-    $_SESSION['cuId']=$_POST["cuId"];
-    //echo $cuId;
-}
 if(isset($_POST["runFunctionOrNot"])) {
     $runFunctionOrNot=$_POST["runFunctionOrNot"];
     if($runFunctionOrNot==1){
-    $cuId=$_SESSION['cuId'];
-    echo get_random($length,$max,$min,$_SESSION['cuId'],$status,$trace,$tp);
+    $cuId=$_SESSION['cusId'];
+    echo get_random($length,$max,$min,$cuId,$status,$trace,$tp);
     $runFunctionOrNot=0;
     }else{
     echo "page refreshed";
@@ -44,7 +40,7 @@ if(isset($_POST["checkout"])) {
     // Step #2: Selecting the database (assuming it has already been created)
     if (mysqli_select_db($conn, $database)) {
         // Step #3: Create the query
-        $query = "DELETE FROM `Cart` WHERE `customerId` = ".$_SESSION['cuId']."";
+        $query = "DELETE FROM `Cart` WHERE `customerId` = ".$cuId."";
         // Step #4: Prepare query as a statement
         if ($statement = mysqli_prepare($conn, $query)) {
             //Step #5: Execute statement and check success
@@ -134,8 +130,7 @@ function get_random($length,$max,$min,$cuId,$status,$trace,$tp) {
 <div class="checkoutBox">
     <h1 class="orderProcessed">Your order has been proceeded!</h1>
     <h1 class="orderProcessed">Order Number: <?php echo $_SESSION['orderNum'];?></h1>
-    <form class="orderSubmit" action="orderHistoryCheck.php" method="get">
-        <input type="hidden" name="cuId" value="<?php echo $_SESSION['cuId'];?>">
+    <form class="orderSubmit" action="orderHistoryCheck.php" method="post">
         <input type="submit" name="submit" value="Check Order History">
     </form>
 </div>

@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="bottomFooter">
-            <p>Copyright © 2021.Nozamart All rights reserved.</p>
+            <p>Copyright © 2022.Nozamart All rights reserved.</p>
         </div>
    
     </footer>

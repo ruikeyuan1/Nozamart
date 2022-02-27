@@ -2,7 +2,7 @@
 <?php
  //include("otherFiles/redirect.php"); 
  //locationReturn($_SERVER['PHP_SELF']);
- //ob_start();
+ ob_start();
  session_start();
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,11 @@
     <?php
     
     include("header.php");  
-     
+   
+    if (isset($_GET['productsSort'])){
+        $_SESSION['productsSort']= $_GET['productsSort'];
+    }
+    $sortArray=array("NameAsc"=>"Name ascending","NameDesc"=>"Name descending","PriceAsc"=>"Price ascending","PriceDesc"=>"Price descending");
     ?>
     <div class="productsPageBanner">
         <p>Product Page</p>
@@ -45,12 +49,17 @@
             </div>
             <div class="upperSortingSecondItem">
                 <label for="Sort-select">Sort by</label>
-                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
-                    <select name="productsSort" id="Sort-select">
-                        <option  value="NameAsc">Name ascending</option>
-                        <option value="NameDesc">Name descending</option>
-                        <option  value="PriceAsc">Price ascending</option>
-                        <option  value="PriceDesc">Price descending</option>
+                <form action="<?= htmlentities($_SERVER["PHP_SELF"]); ?>" method="get">
+                    <select name="productsSort" id="Sort-select">                   
+                        <?php
+                            foreach($sortArray as $x=>$x_value) {
+                                if ($_SESSION['productsSort'] == $x) {
+                                    echo "<option value='" . $x . "'selected>" . $x_value . "</option>";
+                                } else {
+                                    echo "<option value='" . $x . "'>" . $x_value . "</option>";
+                                }
+                            }
+                        ?>
                     </select>
                     <input type="hidden" name="text" value="<?php echo $_GET['text'];?>">
                     <input type="hidden" name="type" value="<?php echo $_GET['type'];?>">
@@ -62,9 +71,7 @@
             <?php                 
                    include("products/productsRfile.php");                 
             ?>      
-        </div>
-        
-       
+        </div>      
         <!--
         <div class="switchPage">
             <div class="leftButton">

@@ -1,5 +1,6 @@
 <!--Ruike Yuan Feb 2022-->
 <?php
+    ob_start();
     session_start();
     include("header.php");
 ?>
@@ -17,11 +18,11 @@
 <body>
 <div class="orderMain">
 <?php
-if(isset($_GET['cuId'])) {
-    $cId=$_GET['cuId'];
-    //echo $cId;
+if(isset($_SESSION['cusId']) and ($_SESSION['cusId']>0)){
+    $cId=$_SESSION['cusId'];    
 }else{
-    $cId=0;
+    echo "<script> alert('Please log in first!'); </script>";
+    header("refresh:0;url='home.php' "); 
 }
 include("dataConnect.php");
 // Step #1: Open a connection to MySQL...
@@ -56,7 +57,7 @@ if (mysqli_select_db($conn,  $database)) {
             echo "<p class='orderItems'>Number of Orders: " . mysqli_stmt_num_rows($statement)."</p>";
             $totalPrice=0;
             // Make table
-            echo "<table class='cartTable' border='2' border-color='#000000'>";
+            echo "<table class='orderTable' border='2' border-color='#000000'>";
             // Make table header
             echo "<th style='text-align: left;'>orderId</th><th>customerId</th><th>status</th><th>traceCode</th><th>TotalPrice</th>";
             // Step #9: Fetch all rows of data from the result statement
@@ -80,8 +81,8 @@ if (mysqli_select_db($conn,  $database)) {
                 //$SESSION['product_'.$one] = 0;                   
                 if($three=="OrderReceived"){
                 $display = <<<DELIMETER
-                <form class="cartForm" action="orderHistoryCheck.php" method="get">
-                    <input type="hidden" name="cuId" value="$cId">
+                <form class="cartForm" action="orderHistoryCheck.php" method="post">
+                    <input type="hidden" name="cusId" value="$cId">
                     <input type="hidden" name="odelete" value="$one">
                     <input type="submit" name="submit" value="delete">
                 </form>                  
@@ -105,14 +106,17 @@ if (mysqli_select_db($conn,  $database)) {
 }
 // Step #11: Close the connection!
 mysqli_close($conn);
-if(isset($_GET['odelete'])){
+if(isset($_POST['odelete'])){
 $oCount = 0;
-$oId=$_GET['odelete'];
+$oId=$_POST['odelete'];
 echo update($oCount,$oId);
+header("location:orderHistoryCheck.php");
+/*
 $url = "orderHistoryCheck.php?cuId={$cId}&odelete={$oId}&submit=delete";
 echo "<script language='javascript' type='text/javascript'>";
 echo "window.location.href='$url'";
 echo "</script>";
+*/
 }
 function update($oCount,$oId){
     //////////upload data

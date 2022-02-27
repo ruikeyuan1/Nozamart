@@ -1,4 +1,5 @@
 <!--Ruike Yuan Feb 2022-->
+<?php  //ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
