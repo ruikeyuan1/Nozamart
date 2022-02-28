@@ -383,17 +383,29 @@ a {
     width: 500px;
     margin: 0 auto;
 }
-input[type="number"], textarea {
+.agestylebox{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 
-    background-color : blue; 
-  
-  }
-  
+}
+.main-section-heading{
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.reg-heading-color{
+  color: #266bf9;
+}
+.main{
+  padding-bottom: 30px;
+}
 
 /* Footer section */
 
-
-/*Ruike Yuan Feb 2022*/
 *
 {
     padding:0px;

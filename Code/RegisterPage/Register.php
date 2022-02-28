@@ -1,5 +1,6 @@
 <?php
 require "Database.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +12,8 @@ require "Database.php";
     <link href="style_Register.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Register</title>
 </head>
 <body>
@@ -129,19 +130,19 @@ require "Database.php";
 
                 <!--Firstname-->
                 <label for="firstname"><b>First Name</b></label>
-                <input type="text" placeholder="Enter Firstname" name="firstname" id="firstname" required>
+                <input type="text" placeholder="First name" name="firstname" id="firstname" required>
 
                 <!--Lastname-->
                 <label for="lastname"><b>Last Name</b></label>
-                <input type="text" placeholder="Enter lastname" name="lastname" id="lastname" required>                
+                <input type="text" placeholder="Last name" name="lastname" id="lastname" required>                
 
                 <!--Username-->
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter username" name="username" id="username">
+                <input type="text" placeholder="Username" name="username" id="username">
 
                 <!--Email-->
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                <input type="text" placeholder="Email" name="email" id="email" required>
                 
                 <!--Password-->
                 <label for="psw"><b>Password</b></label>
@@ -180,10 +181,56 @@ require "Database.php";
                 return 1;
         }else
             return -1;
-}
+        }
+        
 
 
+        //////
+        
+        //Sending Code to email
+       
+    
+        require_once __DIR__ . '/lib/phpmailer/src/Exception.php';
+        require_once __DIR__ . '/lib/phpmailer/src/PHPMailer.php';
+        require_once __DIR__ . '/lib/phpmailer/src/SMTP.php';
+        
+        // passing true in constructor enables exceptions in PHPMailer
+        $mail = new PHPMailer(true);
+        try {
+            // Server settings
+            //$mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+        
+            $mail->Username = 'nozamartshop@gmail.com'; // YOUR gmail email
+            $mail->Password = 'nozamartShop12654'; // YOUR gmail  password
+        
+            // Sender and recipient settings
+            $mail->setFrom('nozamartshop@gmail.com', 'Nozamart');
+            $mail->addAddress($emailTo);
+            $mail->addReplyTo('nozamartshop@gmail.com', 'Nozamart'); // to set the reply to
+        
+            // Setting the email content
+            $_SESSION['rand'] = mt_rand(1000, 9999);
+            $mail->IsHTML(true);
+            $mail->Subject = "Verify your email";
+            $mail->Body = '<h3>Welcome to Toctic <br> Your code for verification:<b> ' . $_SESSION['rand'] . '</b></h3>';
+            $mail->send();
+            echo "Sent";
+            } 
+            catch (Exception $e) {
+                //echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
+                echo "<h3>Email got blocked</h3>";
+                echo "<h3>Use recovery code: <b>7J5S9</b></h3>";
+            }
+        
 
+
+        //If all the steps are filled, will send an email with code
+        $steps_filled = 0;
         //checking if the register button is pressed
         if(isset($_POST['register'])){
             $username = $_POST['username'];
@@ -196,31 +243,39 @@ require "Database.php";
                     if(!empty($_POST['username'])){
                         if(!empty($_POST['email'])){
                             if(!empty($_POST['psw'])){
-                                if(!empty($_POST['age'])){
-                                    $first_name = $_POST['firstname'];
-                                    $last_name = $_POST['lastname'];
-                                    $username = $_POST['username'];
-                                    $email = $_POST['email'];
-                                    $password = $_POST['psw'];
-                                    $age = $_POST['age'];
-                                    //Checking if the user name is free
-                                    $sql_username = "SELECT * FROM customer WHERE `Username` = ?";
-                                    $result_username = Query($conn, $sql_username, "s", $_POST['username']);
-                                    if (sizeof($result_username) == 0){
-                                        $insert_info = "INSERT INTO `customer` (`FirstName`, `LastName`, `Username`, `Email`, `Password`, `Age`) VALUES (?,?,?,?,?,?)";
-                                        $insertQ = Query($conn, $insert_info, "sssssi", $first_name, $last_name, $username, $email, $password, $age);
-
-                                    
+                                if($_POST['psw'] == $_POST['psw-repeat']){
+                                    if(!empty($_POST['age'])){
+                                        $first_name = $_POST['firstname'];
+                                        $last_name = $_POST['lastname'];
+                                        $username = $_POST['username'];
+                                        $email = $_POST['email'];
+                                        $password = $_POST['psw'];
+                                        $age = $_POST['age'];
+                                        //Checking if the username is free
+                                        $sql_username = "SELECT * FROM customer WHERE `Username` = ?";
+                                        $result_username = Query($conn, $sql_username, "s", $_POST['username']);
+                                        if (sizeof($result_username) == 0){
+                                            $insert_info = "INSERT INTO `customer` (`FirstName`, `LastName`, `Username`, `Email`, `Password`, `Age`) VALUES (?,?,?,?,?,?)";
+                                            $insertQ = Query($conn, $insert_info, "sssssi", $first_name, $last_name, $username, $email, $password, $age);
+                                            $steps_filled += 1;
+                                        
+                                        }
+                                        else{
+                                            echo "Username is taken!";
+                                        }
+                                        
+    
                                     }
                                     else{
-                                        echo "Username is taken!";
+                                        echo "Please enter your age";
                                     }
-                                    
 
                                 }
                                 else{
-                                    echo "Please enter your age";
+                                    echo "The passwords don't match";
                                 }
+                                
+                                
                             }
                             else{
                                 echo "Please enter your desired password";
@@ -247,6 +302,11 @@ require "Database.php";
             
 
         }
+
+
+    
+
+
 
 
     ?>
