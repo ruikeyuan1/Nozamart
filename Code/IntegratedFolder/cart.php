@@ -122,7 +122,7 @@ if(isset($_POST['send'])) {
                                                             echo "Missed unitPrice";
                                                         }        
                                                     } else {
-                                                        echo "Not allowed for under 18";
+                                                        echo "Not allowed for under{$_SESSION['allowAge']}";
                                                     }
                                                 } else {
                                                     //negative result at the bottom
@@ -215,7 +215,7 @@ if(isset($_POST['send'])) {
         }
     }
     else {
-        echo "<script> alert('This product is only available for customers above 18'); </script>";
+        echo "<script> alert('This product is only available for customers above {$_SESSION['allowAge']}'); </script>";
             header("refresh:0;url='singleProduct.php?Id={$_POST['submitone']}&Cs=0'"); 
     }
 }else {
@@ -265,9 +265,12 @@ function retrive(){
                     // Make table header
                     echo "<th>YourId</th><th>ProductId</th><th>Quantity</th><th>unitPrice</th><th>TotalPrice</th><th>Image</th><th>Action</th>";
                     // Step #9: Fetch all rows of data from the result statement
+                    //$rowCount=0;
                     while (mysqli_stmt_fetch($statement)) {
+                        //$rowCount++;
                         $productPrice=$four*$three;
                         $totalPrice=$totalPrice+$productPrice;
+                        $arrStock[$two]=$three;
                         // Create row
                         echo "<tr>";
                         // Create cells
@@ -278,7 +281,7 @@ function retrive(){
                         echo "<td>" . $productPrice . "</td>";
                         echo "<td>" . "<img src='$five' alt='img' width='100px' height='100px'>" . "</td>";
                         // echo "<td>" . "<a href='cart.php?id=$two'>Delete</a>" . "</td>";
-                        $SESSION['product_'.$two] = 0;
+                        //$SESSION['product_'.$two] = 0;
                         $display = <<<DELIMETER
                             
                                         <form class='cartForm' action="#" method="get">
@@ -309,6 +312,8 @@ function retrive(){
                     }
                     // Close table  <input type="hidden" name="cuId" value="$one">
                     echo "</table>";
+                    //print_r($arrStock);
+                    $_SESSION['stockRefresh'] = $arrStock;
                     //Add a link to addbug.php
                     //$Countrows=mysqli_stmt_num_rows($statement)+1;
                     echo "<p class='cartGrand'>Grand Total: {$totalPrice}</p>";

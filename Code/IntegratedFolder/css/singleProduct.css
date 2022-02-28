@@ -86,6 +86,9 @@ main
 .warning{
     color: red;
 }
+.gwarning{
+    color: green;
+}
 b{
     font-size: 40px;
 }

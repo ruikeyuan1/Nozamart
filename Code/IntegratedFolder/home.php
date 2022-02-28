@@ -17,7 +17,7 @@
 <body>
 <?php
     include("header.php");
-    $_SESSION['cusId'] = 0;
+    //$_SESSION['cusId'] = 0;
 ?>
 <main>
     <div class="upperDisplay">
