@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Login.css">
+    <link rel="stylesheet" type="text/css" href="css/Login.css">
     <title>Login</title>
 </head>
 <body>
     <?php 
-    // include '.../header/Header.php';
     //C:\Users\olive\Documents\GitHub\ThreeMusketeer\Code\LoginPage\LoginPage.php
-    //include 'footer.html';
+    require("header.php");
     ?>
     <main>
       <div class="Center">
@@ -56,5 +55,9 @@
         </div>        
       </div>
         </main>
+        <?php 
+    //C:\Users\olive\Documents\GitHub\ThreeMusketeer\Code\LoginPage\LoginPage.php
+    require("footer.php");
+    ?>
 </body>
 </html>

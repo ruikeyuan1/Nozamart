@@ -50,7 +50,7 @@
   }
   input[type=text], input[type=password], input[type=email], input[type=submit]{
     font-size: 1.2em;
-    padding: 3px;
+    padding: 0px;
     outline: none;
     border: none;
     width: 100%;

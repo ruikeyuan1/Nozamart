@@ -113,8 +113,8 @@ main
     cursor: pointer;
 }
 .ProductsItemImg{
-   width: 40%;
-   height:70%;
+   width: 200px;
+   height:200px;
 }
 .ProductsItemTitle{
     color: black;

@@ -1,7 +1,7 @@
 <!--Ruike Yuan Feb 2022-->
 <?php
     $host = "localhost";
-    $user = "rick";
+    $user = "root";
     $pass = "";
-    $database = "Noza";
+    $database = "newthreemusketeer";
 ?>
