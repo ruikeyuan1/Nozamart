@@ -84,19 +84,21 @@
                                             <ul class="displayBlock">
                                                 <li class="title"><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Products</a></li>
                                                 <li><a href="products.php?productsSort=NameAsc&type=watch&text=()&submit=submit">Smart Watches</a></li>
-                                                <li><a href="products.php?productsSort=NameAsc&type=component&text=()&submit=submit">Components</a></li>                                     
+                                                <li><a href="products.php?productsSort=NameAsc&type=computer&text=()&submit=submit">Computers</a></li>
+                                                <li><a href="products.php?productsSort=NameAsc&type=phone&text=()&submit=submit">Phones</a></li>                                   
                                             </ul>
                                             <ul class="displayBlock">
-                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=computer&text=()&submit=submit">Computers</a></li>
-                                                <li><a href="products.php?productsSort=NameAsc&type=phone&text=()&submit=submit">Phones</a></li>
-                                                <li><a href="#">Intelligent Apparatus</a></li>
+                                                <li class="title"><a href="#"></i>Actions</a></li>
+                                                <li><a href="orderchecklogin.php"></i>PickerLogin</a></li>
+                                                <li><a href="#"></i>AdminLogin</a></li>
+                                                <li><a href="LoginPage.php">UserLogin</a></li>
                                             </ul>
                                             <ul class="displayBlock">
                                                 <li class="title"><a href="#">My Account</a></li>
                                                 <li><a href="cart.php">Shooping Cart</a></li>
-                                                <li><a href="LoginPage.php">Login</a></li>
-                                                <li><a href="orderchecklogin.php"></i>PickerLogin</a></li>
-                                                <li><a href="#"></i>AdminLogin</a></li>
+                                                <li><a href="#">register a new account</a></li>
+                                                <li><a href="orderHistoryCheck.php">Order History</a></li>
+                                               
                                             </ul>
                                             <ul class="displayFlex align-items-center flex-column justify-content-center">
                                                 <li>

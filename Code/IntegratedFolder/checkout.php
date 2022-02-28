@@ -12,23 +12,31 @@ session_start();
 <body>
 <?php 
 require("header.php");
+
 $length = 6;
 $min=0;
 $max=0;
 $status="OrderReceived";
 $trace=0;
+//print_r($_SESSION['stockRefresh']);
+//echo $_SESSION['stockRefresh'][1][1];
+//next($array)
+
+
 if(isset($_POST["grandTotal"])) {
     $tp=$_POST["grandTotal"];
-}
-if(isset($_POST["cuId"])) {
-    $_SESSION['cuId']=$_POST["cuId"];
-    //echo $cuId;
+    //echo $_SESSION['stockRefresh'][1];
+    foreach($_SESSION['stockRefresh'] as $key => $value){
+        echo stockRefresh($key,$value);
+        //print_r($_SESSION['stockRefresh']);
+        echo $key,$value;
+    }
 }
 if(isset($_POST["runFunctionOrNot"])) {
     $runFunctionOrNot=$_POST["runFunctionOrNot"];
     if($runFunctionOrNot==1){
-    $cuId=$_SESSION['cuId'];
-    echo get_random($length,$max,$min,$_SESSION['cuId'],$status,$trace,$tp);
+    $cuId=$_SESSION['cusId'];
+    echo get_random($length,$max,$min,$cuId,$status,$trace,$tp);
     $runFunctionOrNot=0;
     }else{
     echo "page refreshed";
@@ -44,7 +52,7 @@ if(isset($_POST["checkout"])) {
     // Step #2: Selecting the database (assuming it has already been created)
     if (mysqli_select_db($conn, $database)) {
         // Step #3: Create the query
-        $query = "DELETE FROM `Cart` WHERE `customerId` = ".$_SESSION['cuId']."";
+        $query = "DELETE FROM `Cart` WHERE `customerId` = ".$cuId."";
         // Step #4: Prepare query as a statement
         if ($statement = mysqli_prepare($conn, $query)) {
             //Step #5: Execute statement and check success
@@ -119,6 +127,7 @@ function get_random($length,$max,$min,$cuId,$status,$trace,$tp) {
                 echo "<script language='javascript' type='text/javascript'>";
                 echo "window.location.href='$url'";
                 echo "</script>";
+               
             }
             mysqli_close($con);
             return $_SESSION['orderNum'];
@@ -128,14 +137,56 @@ function get_random($length,$max,$min,$cuId,$status,$trace,$tp) {
         echo get_random($length,$max,$min,$cuId,$status,$trace,$tp);
         }
     }
+}
+    
+function stockRefresh($key,$value) {
+    include("dataConnect.php");
+    $con = mysqli_connect($host, $user, $pass, $database);
+    $sql="SELECT  `stock` FROM `product` WHERE `Id`='$key'"; 
+    $result=mysqli_query($con,$sql); 
+    $row = mysqli_fetch_array($result, MYSQLI_NUM); 
+    //echo $key;
+    //echo $row[0];
+    $currentStock=$row[0]-$value;
+    //echo $currentStock;
+    // Step #1: Open a connection to MySQL...
+    include("dataConnect.php");
+    $con = mysqli_connect($host, $user,$pass);
+    // And test the connection
+    if (!$con) {
+        die("There was an error connecting to the database. Error: " . mysqli_connect_errno());
+    }
+    // Step #2: Selecting the database (assuming it has already been created)
+    if (mysqli_select_db($con, $database)) {
+        // Step #3: Create the query
+        $query = "UPDATE `product` SET `stock`= ? WHERE `Id`= ?";
+                    
+        // Step #4: Prepare query as a statement
+        if ($statement = mysqli_prepare($con, $query)) {
+            mysqli_stmt_bind_param($statement, 'ii',$currentStock,$key);
+            //Step #5: Execute statement and check success
+            if (mysqli_stmt_execute($statement)) {
+                echo "Query5 executed";
+            } else {
+                echo "Error5 executing query";
+                die(mysqli_error($con));
+            }
+            mysqli_stmt_close($statement);
+        }
+        mysqli_close($con);
+    }
+    else{
+    echo "redo";
+    //echo stockRefresh($key,$value);
+    }
 }   
+
 ?>
 <main>
 <div class="checkoutBox">
     <h1 class="orderProcessed">Your order has been proceeded!</h1>
     <h1 class="orderProcessed">Order Number: <?php echo $_SESSION['orderNum'];?></h1>
-    <form class="orderSubmit" action="orderHistoryCheck.php" method="get">
-        <input type="hidden" name="cuId" value="<?php echo $_SESSION['cuId'];?>">
+    <form class="orderSubmit" action="orderHistoryCheck.php" method="post">
         <input type="submit" name="submit" value="Check Order History">
     </form>
 </div>
