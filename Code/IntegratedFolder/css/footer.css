@@ -1,0 +1,81 @@
+/*Ruike Yuan Feb 2022*/
+*
+{
+    padding:0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 1280px;
+    margin: 0 auto;
+}
+main
+{
+    background-color: white;
+}
+.topFooter{
+    background-color: #F3F8FC;
+    display: grid;
+    grid-template-columns: 33,33%, 33,33%, 33,33%;
+    text-decoration:none
+}
+.leftFooter
+{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    margin-left: 100px;
+}
+.leftQuate{
+    width: 30px;
+    height: 30px;
+}
+.rightQuate{
+    width: 30px;
+    height: 30px;
+}
+.footerLogo
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  width: 150px;
+  height: 40px;
+}
+.leftFooter .footerFlexTwo span{
+    margin-top: 10px;
+   font-size: 25px;
+   width: 100px;
+   line-height: 40px;
+}
+.middleFooter
+{
+    grid-column: 2/3;
+}
+.rightFooter
+{
+    grid-column: 3/4;
+}
+.bottomFooter{
+    background-color: #316EF2;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+    color: white;
+    font-size: 10px;
+}
+.topFooter ul li{
+    list-style-type: none;
+    font-size: 24px;
+    line-height: 40px;
+}
+.topFooter a{
+    text-decoration: none;
+    color:black;
+}
+.footerPayment{
+    width: 231px;
+    height: 30px;
+    margin-top:10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,161 @@
+/*Ruike Yuan Feb 2022*/
+*
+{
+    padding:0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 1280px;
+    margin: 0 auto;
+}
+main
+{
+    background-color: white;
+}
+.productsPageBanner
+{
+    background-image: url("../img/fashion/breadcrunb-bg.png");
+    background-position: -350px;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
+.productsPageBanner p
+{
+    font-size: 80px;
+    color: black;
+}
+.productsPageBanner span
+{
+    font-size: 40px;
+}
+.fontBlack{
+    color: black;
+}
+.fontBlue{
+    color: #3A6AF0;
+}
+.productsMenu{
+    float: left;
+    width: 20%;
+    height: 340px;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 2px solid #8f8d8d;
+    line-height:50px;
+   margin-left: 50px;
+   margin-top: 50px;
+}
+.productsMenu ul li a{
+    color: #8f8d8d;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 10px;
+}
+.productsMenu ul li a span{
+    color: black;
+}
+.upperSorting{
+    display:flex;
+    padding:50px 100px 0px 200px;
+    width: 65%;
+    height: 100px;
+    place-content: space-between;
+}
+.upperSortingFirstItem{
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #8f8d8d;
+}
+.upperSortingFirstItem span{
+     color: #3A6AF0;
+}
+.upperSortingSecondItem{
+    display: flex;
+    width: 300px;
+    height: 50px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #8f8d8d;
+}
+.upperSortingSecondItem form input[type=submit],select{
+    margin-left: 4px;
+   background-color: white;
+   border: 2px solid grey;
+   color:#3A6AF0;
+   cursor: pointer;
+}
+#Sort-select{
+    color: #3A6AF0;
+}
+.ProductsPagedownDisplay{
+    padding: 20px 0px 0px 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 70%;
+    background-color: white;
+    margin-bottom: 100px;
+}
+.ProductsPagedowndownDisplayItem{
+    padding: 10px;
+    margin: 20px 80px 0px 80px;
+    border-radius: 10px;
+    border: 2px solid #bdc3c7;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+.ProductsItemImg{
+   width: 200px;
+   height:200px;
+}
+.ProductsItemTitle{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+.ProductsItemPrice{
+    color: grey;
+    font-size: 20px;
+    font-weight: bold;
+}
+.switchPage{
+    display: flex;
+    flex-direction: row;
+    padding:50px 100px 0px 870px;
+    width: 40%;
+    height: 100px;
+}
+.leftButton img{
+    margin-left: 20px;
+    width: 60px;
+    height: 50px;
+}
+.middleButton{
+    background-image: url("../img/productPage/Rectangle.png");
+    font-size: 26px;
+    font-weight: 60px;
+    margin-left: 25px;
+    padding:10px;
+    border-width: 2px;
+    border-color:#3A6AF0;
+    border-style: solid;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #3A6AF0;
+}
+.middleButton b{
+    color: black;
+}
+.rightButton img{
+    margin-left: 20px;
+    width: 60px;
+    height: 50px;
+}

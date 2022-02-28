@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formBox{
+    width: 500px;
+    height: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  fieldset {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 15px;
+    color: grey;
+  }
+  .form div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+  }
+  .contentText{
+    display: inline-flex;
+    margin-left: 170px;
+    margin-top: 2em;
+  }
+  .right{
+    display: flex;
+    justify-content: space-between;
+  }
+  input[type=submit]{
+    height: 30px;
+    border-radius: 8px;
+    color: black;
+  }
+  input[type=text], input[type=password], input[type=email], input[type=submit]{
+    font-size: 1.2em;
+    padding: 3px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: none;
+  }
