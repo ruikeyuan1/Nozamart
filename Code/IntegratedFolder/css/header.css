@@ -10,6 +10,7 @@
 }
 body,
 html {
+  width: auto;
   height: 100%;
 }
 .container{
@@ -19,13 +20,13 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 1200px) {
+@media (min-width: 100%) {
   .container,
   .container-lg,
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1200px;
+    max-width: 100%;
   }
 }
 .headerBody{
@@ -254,7 +255,7 @@ header .main-menu ul li .mega-menu li ul li a {
   width: 10%;
   position: absolute;
   top: 0;
-  left: 422px;
+  right: 0px;
   height: 44px;
   border-radius: 0 5px 5px 0;
   background-color: #266bf9;

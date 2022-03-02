@@ -126,7 +126,9 @@ if(isset($_POST['send'])) {
                                                     }
                                                 } else {
                                                     //negative result at the bottom
-                                                    echo "lost auantity";
+                                                    //echo "Empty Stock for this product";
+                                                    echo "<script> alert('Empty Stock for this product'); </script>";
+                                                    header("refresh:0;url='home.php' "); 
                                                 } 
                                             }
                                         }
