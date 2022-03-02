@@ -12,7 +12,6 @@ session_start();
 <body>
 <?php 
 require("header.php");
-
 $length = 6;
 $min=0;
 $max=0;
@@ -21,8 +20,6 @@ $trace=0;
 //print_r($_SESSION['stockRefresh']);
 //echo $_SESSION['stockRefresh'][1][1];
 //next($array)
-
-
 if(isset($_POST["grandTotal"])) {
     $tp=$_POST["grandTotal"];
     //echo $_SESSION['stockRefresh'][1];

@@ -67,3 +67,6 @@
     width: 200px;
     cursor: pointer;
   }
+  .wrongLogin{
+    color:red;
+  }

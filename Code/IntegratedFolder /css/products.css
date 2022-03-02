@@ -99,8 +99,9 @@ main
     grid-template-columns: 50% 50%;
     width: 70%;
     background-color: white;
-    margin-bottom: 100px;
+    margin-bottom:20px;
 }
+
 .ProductsPagedowndownDisplayItem{
     padding: 10px;
     margin: 20px 80px 0px 80px;
@@ -111,6 +112,9 @@ main
     text-align: center;
     align-items: center;
     cursor: pointer;
+}
+.ProductsPagedowndownDisplayItem:hover {
+    border-color: #266bf9;
 }
 .ProductsItemImg{
    width: 200px;
@@ -126,12 +130,15 @@ main
     font-size: 20px;
     font-weight: bold;
 }
+
 .switchPage{
     display: flex;
     flex-direction: row;
-    padding:50px 100px 0px 870px;
-    width: 40%;
     height: 100px;
+    width: 20%;
+    top: -10px;
+    margin-bottom: 20px;
+    margin-left: 68%;
 }
 .leftButton img{
     margin-left: 20px;
@@ -154,6 +161,7 @@ main
 .middleButton b{
     color: black;
 }
+
 .rightButton img{
     margin-left: 20px;
     width: 60px;

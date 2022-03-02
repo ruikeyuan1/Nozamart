@@ -35,11 +35,11 @@
     <div class="productsMenu">
         <ul>
             <li><a href="#"><span>Products</span></a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=computer&text=()&submit=submit">Computers</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=phone&text=()&submit=submit">Phones</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=watch&text=()&submit=submit">Watches</a></li>
-            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=component&text=()&submit=submit">Components</a></li>
-            <li><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Apparatus</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=computer&text=()&submit=submit&page=1">Computers</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=phone&text=()&submit=submit&page=1">Phones</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=watch&text=()&submit=submit&page=1">Watches</a></li>
+            <li><a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=component&text=()&submit=submit&page=1">Components</a></li>
+            <li><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit&page=1">All Apparatus</a></li>
         </ul>
     </div>
     <main class="productsMain">
@@ -63,6 +63,7 @@
                     </select>
                     <input type="hidden" name="text" value="<?php echo $_GET['text'];?>">
                     <input type="hidden" name="type" value="<?php echo $_GET['type'];?>">
+                    <input type="hidden" name="page" value="<?php echo $_GET['page'];?>">
                     <input type="submit" name="submit" value="submit">
                 </form>
             </div>
@@ -71,21 +72,21 @@
             <?php                 
                    include("products/productsRfile.php");                 
             ?>      
-        </div>      
-        <!--
+        </div>       
         <div class="switchPage">
-            <div class="leftButton">
-                <img src="img/productPage/RectangleLeft.png" alt="">
-            </div>
-            <div class="middleButton">
-                <p><b>1</b>/<b>3</b></p>
-            </div>
-            <div class="rightButton">
-                <img src="img/productPage/RectangleRight.png" alt="">
-            </div>
+        <div class="leftButton">
+            <a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=<?php echo $_GET['type'];?>&text=0&submit=submit&page=<?php echo $pageValCheckMinus;?>"><img src="img/productPage/RectangleLeft.png" alt=""></a>
         </div>
-        -->
+        <div class="middleButton">
+            <p><b><?php echo $pageVal;?></b>/<b><?php echo $pageNum;?></b></p>
+        </div>
+        <div class="rightButton">
+            <a href="products.php?productsSort=<?php echo $_GET['productsSort'];?>&type=<?php echo $_GET['type'];?>&text=0&submit=submit&page=<?php echo $pageValCheckPlus;?>"><img src="img/productPage/RectangleRight.png" alt=""></a>
+        </div>
+    </div>
+        
     </main>
+    
     <?php
     include("footer.php");
 ?>
