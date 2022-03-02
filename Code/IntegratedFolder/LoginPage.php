@@ -107,5 +107,3 @@ session_start();
 <?php
   include("footer.php");
 ?>
->>>>>>> 7f9691c0e5f9e891a1ef5f8ebc885c368e5abf8e
-</html>
