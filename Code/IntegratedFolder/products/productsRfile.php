@@ -131,8 +131,8 @@ if ($productDisplay = mysqli_prepare($con, $sql)) {
 	mysqli_stmt_bind_result($productDisplay,$Id,$name,$price,$Img);
 	mysqli_stmt_store_result($productDisplay);
 	if (mysqli_stmt_num_rows($productDisplay) > 0) {
-		//$num=mysqli_stmt_num_rows($productDisplay);
-		//$pageNum = ceil($num/$pageSize);
+		$num=mysqli_stmt_num_rows($productDisplay);
+		$pageNum = ceil($num/$pageSize);
 		
 		while (mysqli_stmt_fetch($productDisplay)) {		
 			$productsD = <<<DELIMETER
