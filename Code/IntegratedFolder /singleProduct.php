@@ -32,7 +32,6 @@
             $_SESSION['COUNTPLUS']=1;
            // echo  $_SESSION['COUNTPLUS'];
         }
-      
         if(isset($_POST["increment"])) {
             $_SESSION['COUNTPLUS']++ ;
             //echo  $_SESSION['COUNTPLUS'];
@@ -41,8 +40,6 @@
             $_SESSION['COUNTPLUS']-- ;
             //echo  $_SESSION['COUNTPLUS'];
         }
-       
-       
     ?>
        <form action="singleProduct.php?Id=<?php echo$_GET['Id'];?>&Cs=<?php echo $_SESSION['COUNTPLUS'];?>" method="post">
             <div class="plusMinus">
