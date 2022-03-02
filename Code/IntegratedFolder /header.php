@@ -49,6 +49,7 @@
                                 <form action="products.php" >
                                     <input type="hidden" name="productsSort" value="NameAsc">
                                     <input type="hidden" name="type" value="0">
+                                    <input type="hidden" name="page" value="1">
                                     <input type="hidden" name="submit" value="submit">
                                     <input type="text" name="text" placeholder=" Search for products" />
                                     <!--<button><img src="img/icons/search.png" alt="search"></button>-->
@@ -82,7 +83,7 @@
                                     <ul class="mega-menu displayBlock">
                                         <li class="displayFlex">
                                             <ul class="displayBlock">
-                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">All Products</a></li>
+                                                <li class="title"><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit&page=1">All Products</a></li>
                                                 <li><a href="products.php?productsSort=NameAsc&type=watch&text=()&submit=submit">Smart Watches</a></li>
                                                 <li><a href="products.php?productsSort=NameAsc&type=computer&text=()&submit=submit">Computers</a></li>
                                                 <li><a href="products.php?productsSort=NameAsc&type=phone&text=()&submit=submit">Phones</a></li>                                   
