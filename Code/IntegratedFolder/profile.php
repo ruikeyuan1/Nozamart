@@ -35,7 +35,7 @@
                         <legend>New Password</legend>
                         <input type="password" name="newPassword"/>
                     </fieldset></p>
-                    
+
                     <p><fieldset class="changePass" id="confirmPassword">
                         <legend>New Password</legend>
                         <input type="password" name="confirmPassword"/>
@@ -168,7 +168,8 @@
                                             $username = $_POST['newUsername'];
                                             mysqli_stmt_bind_param($stmt, "ss", $username, $id);
                                             if(!mysqli_stmt_execute($stmt)){
-                                                $error = "Error executing query";
+                                                $error = "Error executing query" . mysqli_error($con);
+                                                
                                             }else{
                                                 echo "Username changed successfully";
                                             }
