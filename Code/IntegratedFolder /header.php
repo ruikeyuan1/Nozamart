@@ -27,7 +27,7 @@
                                 <ul>
                                     <li><a href="tel:0123456789"><img src="img/icons/contact-2.png"></img> +012 345 6789</a></li>
                                     <li><a href="ruike.yuan@student.nhlstenden.com"><img src="img/icons/contact-3.png"></i> nozamart@nhlstenden.com</a></li>
-                                    <li><a href="#"><img src="img/icons/contact-1.png"></i>Account</a></li>
+                                    <li><a href="profile.php"><img src="img/icons/contact-1.png"></i>Account</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                         </li>
                                     </ul>
                                 </li>                               
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="profile.php">Account</a></li>
                             </ul>
                         </div>
                     </div>

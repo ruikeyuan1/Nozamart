@@ -25,8 +25,8 @@
                 <ul>
                     <li><b><a href="profile.php">My account</a></b></li>
                     <li><a href="cart.php">Shopping Cart</a></li>
-                    <li><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit">Products</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="products.php?productsSort=NameAsc&type=0&text=0&submit=submit&page=1">Products</a></li>
+                    <li><a href="LoginPage.php">Login</a></li>
                 </ul>
             </div>
             <div class="rightFooter">

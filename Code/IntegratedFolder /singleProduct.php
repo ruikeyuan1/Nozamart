@@ -1,7 +1,6 @@
 <!--Ruike Yuan Feb 2022-->
 <?php
    session_start();
-  
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -59,11 +58,9 @@
             <input type="hidden" name="submitage" value="<?php echo $Age;?>">
             <input type="hidden" name="submittwo" value="<?php echo $_SESSION['COUNTPLUS'];?>">
             <input type="hidden" name="submitprice" value="<?php echo $unitPrice;?>">
-            <input type="submit" class="submitButton" name="send" value="Add to Cart">
-           
+            <input type="submit" class="submitButton" name="send" value="Add to Cart">     
         </form>
     </div>
-   
 </main>
 <?php
     include("footer.php");

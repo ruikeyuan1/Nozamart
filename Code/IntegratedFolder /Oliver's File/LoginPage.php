@@ -1,4 +1,3 @@
-<!--Oliver's file-->
 <?php 
 session_start();
 ?>
