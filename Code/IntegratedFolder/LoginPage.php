@@ -47,7 +47,7 @@ session_start();
                     Remember me
                   </div>
                   <div class="right">
-                    <a href="#">Forgot your password?</a>
+                    <a href="forgotPassword.php">Forgot your password?</a>
                   </div>
                 </div>
                 <div class="login">
